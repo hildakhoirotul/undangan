@@ -1,0 +1,117 @@
+/* =========================================================
+   TAMPILAN TABLET / PC
+   ---------------------------------------------------------
+   Kiri : background lebar + info mempelai & ayat
+   Kanan: undangan ukuran HP (412px, setara Galaxy A55), tinggi
+          penuh dan menempel di tepi kanan layar.
+   Desain mobile-nya sendiri tidak berubah sama sekali.
+   ========================================================= */
+
+:root {
+    --ink: #25341c;
+    --phone-w: 412px;
+
+    /* Ganti kalau punya gambar landscape khusus untuk tampilan desktop */
+    --desktop-bg: url('../images/cover.gif');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    color: var(--ink);
+    font-family: "Space Mono", monospace;
+}
+
+.shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--phone-w);
+    height: 100dvh;
+}
+
+/* ========================= */
+/* KIRI: HERO */
+/* ========================= */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-width: 0;
+
+    padding: 10dvh clamp(30px, 2vw, 72px) 0 24dvh;
+
+    background-image: var(--desktop-bg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* lapisan tipis supaya tulisan tetap terbaca di atas gambar */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left,
+            rgba(255, 255, 255, 0.45),
+            rgba(255, 255, 255, 0.1) 80%);
+    pointer-events: none;
+}
+
+.hero-text {
+    position: relative;
+    width: min(100%, 880px);
+    text-align: right;
+}
+
+.hero-kicker {
+    margin: 0;
+    font-size: clamp(0.8rem, 1.4vw, 1.1rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-names {
+    margin: 15px 0 clamp(14px, 3dvh, 28px);
+    font-family: "Comforter", cursive;
+    font-size: clamp(3.4rem, 7vw, 6.2rem);
+    font-weight: 600;
+    /* line-height: 1.1; */
+}
+
+.hero-quote {
+    margin: 0 0 clamp(14px, 3dvh, 28px);
+    font-size: clamp(0.72rem, 1.15vw, 0.95rem);
+    line-height: 1.7;
+}
+
+.hero-reference {
+    margin: 0;
+    font-size: clamp(0.72rem, 1.15vw, 0.95rem);
+}
+
+/* ========================= */
+/* KANAN: UNDANGAN UKURAN HP */
+/* ========================= */
+
+.phone {
+    position: relative;
+    height: 100dvh;
+    box-shadow: -10px 0 40px rgba(37, 52, 28, 0.25);
+}
+
+.phone-screen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #fff;
+}

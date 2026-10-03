@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salsa & Agung</title>
+
+  <script>
+    // Di HP, langsung ke undangannya (tanpa tampilan desktop)
+    if (!window.matchMedia('(min-width: 768px) and (min-height: 600px)').matches) {
+      location.replace('index.html' + location.search + location.hash);
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comforter&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/desktop.css">
+</head>
+
+<body>
+  <main class="shell">
+
+    <!-- KIRI: background lebar + info mempelai -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-kicker">The Wedding of</p>
+        <h1 class="hero-names">Salsa &amp; Agung</h1>
+
+        <p class="hero-quote">
+          Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu
+          dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan
+          di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat
+          tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
+        </p>
+        <p class="hero-reference">(QS. Ar-Rum Ayat 21)</p>
+      </div>
+    </section>
+
+    <!-- KANAN: undangan ukuran HP (isinya index.html) -->
+    <div class="phone">
+      <iframe class="phone-screen" src="index.html" title="Undangan Pernikahan Salsa & Agung"
+        allow="autoplay; fullscreen"></iframe>
+    </div>
+
+  </main>
+
+  <script>
+    // Teruskan parameter di URL (misal ?to=Nama) ke undangan di sebelah kanan
+    document.querySelector('.phone-screen').src = 'index.html' + location.search + location.hash;
+  </script>
+</body>
+
+</html> 

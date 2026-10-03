@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="id" class="is-locked">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salsa & Agung</title>
+
+  <script>
+    // Tablet/PC: undangan ditampilkan di dalam bingkai HP (desktop.html).
+    // Di HP (atau di dalam bingkai itu sendiri) script ini nggak ngapa-ngapain.
+    (function () {
+      if (window.self !== window.top) {
+        document.documentElement.classList.add('embedded');
+        return;
+      }
+      if (window.matchMedia('(min-width: 768px) and (min-height: 600px)').matches) {
+        location.replace('desktop.html' + location.search + location.hash);
+      }
+    })();
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comforter&family=Satisfy&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Story+Script&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="cover">
+
+    <div class="cover-bg">
+      <div class="door door-left">
+        <img class="cover-bg-left" src="./assets/images/bg-kiri.png" alt="">
+      </div>
+
+      <div class="door door-right">
+        <img class="cover-bg-right" src="./assets/images/bg-kanan.png" alt="">
+
+        <!-- GUNUNGAN -->
+        <!-- Nempel di pintu kanan: pas dia nyatu lagi (utuh), dia ikut
+             kebawa & ikut hilang bareng pintu kanan, kayak kenop pintu -->
+        <div class="gunungan">
+          <div class="gunungan-atas-group">
+            <img class="gunungan-atas" src="./assets/images/gunungan-atas.png" alt="">
+            <img class="panah-atas" src="./assets/images/panah-atas.png" alt="">
+          </div>
+          <div class="gunungan-bawah-group">
+            <img class="panah-bawah" src="./assets/images/panah-bawah.png" alt="">
+            <img class="gunungan-bawah" src="./assets/images/gunungan-bawah.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opening">
+
+      <div class="sparkles"></div>
+
+      <!-- BUTTERFLIES -->
+      <img class="butterflies" src="./assets/images/kupu5.gif" alt="">
+
+      <!-- FRAME -->
+      <img class="frame-atas" src="./assets/images/frame-atas.png" alt="">
+
+      <img class="frame-bawah" src="./assets/images/frame-bawah.png" alt="">
+
+      <!-- TITLE -->
+      <div class="wedding-title">
+        <div class="wedding-of">The Wedding Of</div>
+        <div class="couple-name">SALSA & AGUNG</div>
+      </div>
+
+      <button class="btn-buka-undangan" id="openInvitationBtn">
+        Buka Undangan
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- HALAMAN ISI UNDANGAN -->
+  <!-- ========================= -->
+
+  <div class="invitation-page" id="invitationPage">
+
+    <!-- SECTION 1: Welcome -->
+    <section class="invitation-section section-opening">
+      <div class="content">
+        <div class="text-center pt-4">
+          <span class="title">The Wedding of</span>
+          <p class="wedding-couple mt-0">Salsa & Agung</p>
+          <img src="./assets/images/ornamen1.png" alt="ornamen" class="ornamen">
+          <p class="to">Kepada Yth.</p>
+          <p class="invitation-name">Bapak/Ibu/Saudara/i</p>
+        </div>
+        <div class="savedate">
+          <p class="date mb-0 ms-1">Ahad, 03 Januari 2027</p>
+          <button class="btn btn-primary btn-save-date" id="saveDateBtn">
+            Save The Date
+          </button>
+        </div>
+      </div>
+      <div class="scroll-indicator align-items-center ms-1">
+        <div class="mouse">
+          <span class="mouse-wheel"></span>
+        </div>
+
+        <span class="scroll-text" id="scrollText">
+          Auto Scroll is on
+        </span>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="invitation-section section-doa">
+      <div class="content pt-5">
+        <div class="sparkles"></div>
+
+        <!-- BUTTERFLIES -->
+        <img class="butterflies" src="./assets/images/kupu5.gif" alt="">
+
+        <!-- FRAME -->
+        <img class="frame-atas" src="./assets/images/frame-atas2.png" alt="">
+
+        <img class="frame-bawah" src="./assets/images/frame-bawah2.png" alt="">
+
+        <div class="doa-text text-center px-3">
+          <p class="doa-title">Allah Subhanahu Wa Ta'ala berfirman</p>
+          <p class="doa-desc">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu
+            dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+            kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi
+            kaum yang berpikir.</p>
+          <p class="doa-reference">(QS. Ar-Rum Ayat 21)</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 3 -->
+    <section class="invitation-section section-bride">
+
+      <!-- Video background -->
+      <video class="bride-video" autoplay muted loop playsinline>
+        <source src="./assets/images/bg4.mp4" type="video/mp4">
+      </video>
+
+      <!-- Canvas PNG -->
+      <img src="./assets/images/canvas.png" alt="" class="bride-canvas">
+
+      <div class="bride-batik-frame">
+        <div class="bride-batik-track">
+          <img src="./assets/images/batik1.png" alt="">
+          <img src="./assets/images/batik1.png" alt="">
+        </div>
+      </div>
+
+      <!-- Tulisan -->
+      <div class="bride-content">
+        <h1 class="bride-title">Bride & Groom</h1>
+        <p class="basmalah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <p class="salam">Assalamualaikum Wr. Wb.</p>
+        <p class="bride-text">
+          Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri
+          acara pernikahan kami:
+        </p>
+        <p class="bride-name">Salsa Oktavia Dwi Puspitasari</p>
+
+        <img src="./assets/images/bride.png" alt="Bride" class="bride-img">
+
+        <p>Putri Kedua</p>
+        <p class="bride-parents">Bapak Alm H. Luky Mulyono </br>
+          & Ibu Hj. Siti Urifah</p>
+
+        <div class="social-media">
+          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <img src="./assets/images/wayang1.gif" alt="" class="wayang-decoration">
+      </div>
+
+    </section>
+
+    <div class="section-divider-ring">
+      <img src="./assets/images/cincin.gif" alt="cincin">
+    </div>
+
+    <!-- SECTION 4 -->
+    <section class="invitation-section section-groom">
+      <!-- Video background -->
+      <video class="groom-video" autoplay muted loop playsinline>
+        <source src="./assets/images/bg5.mp4" type="video/mp4">
+      </video>
+
+      <!-- Canvas PNG -->
+      <img src="./assets/images/canvas.png" alt="" class="groom-canvas">
+
+      <div class="groom-batik-frame">
+        <div class="groom-batik-track">
+          <img src="./assets/images/batik2.png" alt="">
+          <img src="./assets/images/batik2.png" alt="">
+        </div>
+      </div>
+
+      <!-- Tulisan -->
+      <div class="groom-content">
+        <p class="groom-name">Agung Wahyu Saputra</p>
+
+        <img src="./assets/images/groom.png" alt="Groom" class="groom-img">
+
+        <p>Putra Pertama</p>
+        <p class="groom-parents">Bapak Ahmad Gupron </br>
+          & Ibu Sutami Ningsih</p>
+
+        <div class="social-media">
+          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+
+        <div class="countdown-divider">
+          <img src="./assets/images/ornamen2.png" alt="">
+        </div>
+
+        <div class="countdown">
+          <p class="countdown-title">Waktu Menuju Acara</p>
+
+          <div class="countdown-wrapper">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">00</span>
+              <span class="countdown-label">days</span>
+            </div>
+
+            <span class="countdown-separator">:</span>
+
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">00</span>
+              <span class="countdown-label">hours</span>
+            </div>
+
+            <span class="countdown-separator">:</span>
+
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">00</span>
+              <span class="countdown-label">minutes</span>
+            </div>
+
+            <span class="countdown-separator">:</span>
+
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">00</span>
+              <span class="countdown-label">seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- <img src="./assets/images/cincin.png" alt="" class="cincin-img"> -->
+        <img src="./assets/images/wayang2.gif" alt="" class="wayang-decoration">
+      </div>
+    </section>
+
+
+    <!-- SECTION 5 -->
+    <section class="invitation-section section-place">
+
+      <!-- Video background -->
+      <video class="place-video" autoplay muted loop playsinline>
+        <source src="./assets/images/bg6.mp4" type="video/mp4">
+      </video>
+
+      <!-- Canvas -->
+      <div class="place-canvas-wrapper">
+
+        <img src="./assets/images/canvas.png" alt="" class="place-canvas">
+        <img src="./assets/images/bunga.gif" alt="" class="place-flower-frame">
+
+
+        <!-- BOOKMARK -->
+        <div class="place-tabs">
+          <button class="place-tab active" data-place="akad">
+            AKAD
+          </button>
+
+          <button class="place-tab" data-place="resepsi">
+            RESEPSI
+          </button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="place-content">
+
+          <!-- JUDUL BERSAMA -->
+          <p class="place-main-title">Detail Acara</p>
+
+
+          <!-- AKAD -->
+          <div class="place-panel active" id="place-akad">
+
+            <h2>Akad Nikah</h2>
+
+            <p class="place-day">
+              Ahad, 03 Januari 2027
+            </p>
+
+            <p class="place-time">
+              08.00 WIB - Selesai
+            </p>
+
+            <div class="place-location">
+              <i class="fa-solid fa-location-dot"></i>
+
+              <p class="place-address">
+                Dsn Sumbertempur RT 02 RW 01 Ds Sumbergirang
+                Kec Puri Kab Mojokerto
+              </p>
+            </div>
+
+            <div class="map-wrapper">
+              <img src="./assets/images/canvas2.png" alt="" class="map-canvas">
+
+              <div class="google-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d494.440984125966!2d112.46152833582612!3d-7.51725325306678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sDsn%20Sumbertempur%20RT%2002%20RW%2001%20Ds%20Sumbergirang%20Kec%20Puri%20Kab%20Mojokerto!5e0!3m2!1sen!2sid!4v1790690172500!5m2!1sen!2sid"
+                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- RESEPSI -->
+          <div class="place-panel" id="place-resepsi">
+
+            <h2>Resepsi</h2>
+
+            <p class="place-day">
+              Senin, 04 Januari 2027
+            </p>
+
+            <p class="place-time">
+              Bebas
+            </p>
+
+            <div class="place-location">
+              <i class="fa-solid fa-location-dot"></i>
+
+              <p class="place-address">
+                Dsn. Tanggul RT 02 RW 08 Ds. Banjartanggul
+                Kec. Pungging Kab. Mojokerto
+              </p>
+            </div>
+
+            <div class="map-wrapper">
+              <img src="./assets/images/canvas2.png" alt="" class="map-canvas">
+
+              <div class="google-map">
+                <!-- Google Maps nanti di sini -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- JOGLO -->
+      <img src="./assets/images/joglo.png" alt="" class="place-joglo">
+
+    </section>
+
+    <!-- SECTION 6 -->
+    <section class="invitation-section section-story">
+
+      <!-- CONTENT -->
+      <div class="story-content">
+
+        <!-- FOOTPRINT -->
+        <img src="./assets/images/footprint.gif" alt="" class="footprint-1">
+
+        <!-- JUDUL -->
+        <p class="story-main-title">Our Story</p>
+
+        <!-- STORY 1 -->
+        <div class="story-item story-satu">
+
+          <!-- FOTO + BUNGA -->
+          <div class="story-photo-wrapper">
+
+            <img src="./assets/images/bunga1.png" alt="" class="story-bunga">
+
+            <img src="./assets/images/foto1.png" alt="" class="story-photo">
+
+          </div>
+
+
+          <!-- DESKRIPSI -->
+          <div class="story-description">
+
+            <p class="story-title">
+              Awal Pertemuan
+            </p>
+
+            <p class="story-text">
+              Berawal dari sebuah perkenalan sederhana di media sosial,
+              tak pernah terbayangkan bahwa pertemuan itu akan membawa
+              kami pada sebuah perjalanan panjang menuju kehidupan bersama.
+
+              Seiring berjalannya waktu, komunikasi yang awalnya sederhana
+              berubah menjadi kedekatan. Kami mulai mengenal satu sama lain,
+              berbagi cerita, melewati suka dan duka, hingga akhirnya
+              menyadari bahwa ada seseorang yang ingin kami jadikan teman
+              dalam menjalani hari-hari ke depan.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- FOOTPRINT -->
+        <img src="./assets/images/footprint.gif" alt="" class="footprint-2">
+
+        <!-- STORY 2 NANTI -->
+        <div class="story-item story-dua reverse">
+
+          <div class="story-photo-wrapper">
+
+            <img src="./assets/images/foto2.png" alt="" class="story-photo">
+
+            <img src="./assets/images/bunga2.png" alt="" class="story-bunga">
+
+          </div>
+
+          <div class="story-description">
+
+            <p class="story-title">
+              Sebuah Keseriusan
+            </p>
+
+            <p class="story-text">
+              Hubungan yang kami jalani perlahan membawa kami pada satu keyakinan bahwa cinta bukan hanya tentang
+              perasaan, tetapi juga tentang kesediaan untuk tumbuh, bertahan, dan saling mendampingi.
+              Dengan restu dan doa dari kedua keluarga, kami memantapkan hati untuk melangkah ke jenjang yang lebih
+              serius. Hingga akhirnya, sebuah lamaran menjadi tanda bahwa perjalanan kami tidak berhenti sebagai
+              sepasang kekasih, tetapi akan berlanjut sebagai pasangan hidup.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- STORY 3 -->
+        <div class="story-item story-tiga">
+
+          <!-- FOTO + BUNGA -->
+          <div class="story-photo-wrapper">
+
+            <img src="./assets/images/bunga1.png" alt="" class="story-bunga">
+
+            <img src="./assets/images/foto3.png" alt="" class="story-photo">
+
+          </div>
+
+
+          <!-- DESKRIPSI -->
+          <div class="story-description">
+
+            <p class="story-title">
+              Menuju Hari Bahagia
+            </p>
+
+            <p class="story-text">
+              Kini, setelah melalui berbagai cerita dan perjalanan bersama, kami memilih untuk menyatukan dua hati dalam
+              sebuah ikatan suci pernikahan.
+
+              Bukan karena perjalanan kami selalu sempurna, melainkan karena kami percaya bahwa bersama, kami dapat
+              saling melengkapi dan belajar menjadi lebih baik.
+
+              Dengan penuh rasa syukur, kami mengundang keluarga dan sahabat untuk menjadi bagian dari hari bahagia
+              kami, saat dua insan yang pernah dipertemukan secara sederhana akhirnya dipersatukan dalam sebuah janji
+              untuk berjalan bersama seumur hidup.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 7 -->
+    <section class="invitation-section section-foto">
+
+      <!-- TEXT KIRI ATAS -->
+      <div class="gallery-content">
+        <p class="gallery-title">Our Gallery</p>
+
+        <p class="gallery-description">
+          From moments to memories,<br>
+          From memories to forever.
+        </p>
+
+        <!-- CONTROLS -->
+        <div class="gallery-controls">
+
+          <button type="button" class="gallery-control" id="galleryPause" title="Pause Gallery Animation">
+            <i class="fa-solid fa-pause"></i>
+            <span>Pause</span>
+          </button>
+
+          <button type="button" class="gallery-control active" id="galleryStart" title="Start Gallery Animation">
+            <i class="fa-solid fa-play"></i>
+            <span>Start</span>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOTO KANAN -->
+      <div class="gallery-wrapper">
+
+        <div class="gallery-track">
+
+          <img src="./assets/images/foto4.png" alt="gallery" class="gallery">
+
+          <img src="./assets/images/foto4.png" alt="gallery" class="gallery">
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 8 -->
+    <section class="invitation-section section-gift">
+
+      <!-- FRAME ATAS -->
+      <!-- <img src="./assets/images/frame-atas1.png" alt="" class="gift-frame gift-frame-top"> -->
+      <img src="./assets/images/bunga1.gif" alt="" class="gift-flower-frame">
+
+      <!-- DEKORASI BUNGA -->
+      <img src="./assets/images/bunga3.png" alt="" class="gift-flower">
+
+
+      <!-- CONTENT -->
+      <div class="gift-content">
+
+        <!-- GUNUNGAN -->
+        <img src="./assets/images/gunungan1.png" alt="" class="gift-gunungan">
+
+
+        <!-- JUDUL -->
+        <div class="gift-heading">
+
+          <div class="gift-line gift-line-left">
+            <img src="./assets/images/line.png" alt="">
+          </div>
+
+          <p class="gift-title">
+            Tanda Kasih
+          </p>
+
+          <div class="gift-line gift-line-right">
+            <img src="./assets/images/line.png" alt="">
+          </div>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <p class="gift-description">
+          Doa dan restu dari Bapak/Ibu/Saudara merupakan hadiah terindah
+          bagi kami. Apabila berkenan memberikan tanda kasih, dapat
+          disalurkan melalui informasi berikut.
+        </p>
+
+
+        <!-- CARD REKENING 1 -->
+        <div class="gift-card gift-card-1">
+
+          <img src="./assets/images/card.png" alt="" class="gift-card-bg">
+
+          <div class="gift-card-content">
+            <p>Bank: BCA</p>
+            <p>No. Rekening: 1234567890</p>
+            <p>Atas Nama: John Doe</p>
+          </div>
+
+        </div>
+
+
+        <!-- CARD REKENING 2 -->
+        <div class="gift-card gift-card-2">
+
+          <img src="./assets/images/card.png" alt="" class="gift-card-bg">
+
+          <div class="gift-card-content">
+            <p>Bank: BCA</p>
+            <p>No. Rekening: 1234567890</p>
+            <p>Atas Nama: John Doe</p>
+          </div>
+
+        </div>
+
+
+        <!-- CARD KIRIM HADIAH -->
+        <div class="gift-card gift-card-3 gift-card-address">
+
+          <img src="./assets/images/card2.png" alt="" class="gift-card-bg2">
+
+          <div class="gift-card-content">
+
+            <p class="gift-card-title">
+              Kirim Hadiah
+            </p>
+
+            <p>
+              Atas Nama: John Doe
+            </p>
+
+            <p>
+              Dsn Sumbertempur RT 02 RW 01
+              Ds Sumbergirang Kec Puri
+              Kab Mojokerto
+            </p>
+
+            <button class="btn btn-primary btn-copy-address" id="copyAddressBtn">
+              <i class="fa-solid fa-location-dot"></i>
+              Buka Alamat di Maps
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ORNAMEN BAWAH -->
+        <img src="./assets/images/ornamen3.png" alt="" class="gift-ornament">
+
+
+        <!-- PENUTUP -->
+        <p class="gift-thanks">
+          Terima kasih atas doa, kasih, dan perhatian
+          yang diberikan kepada kami.
+        </p>
+
+      </div>
+
+
+      <!-- FRAME BAWAH -->
+      <!-- <img src="./assets/images/frame-bawah1.png" alt="" class="gift-frame gift-frame-bottom"> -->
+
+    </section>
+
+    <!-- SECTION 9 -->
+
+    <section class="invitation-section section-ucapan">
+
+      <!-- BACKGROUND DECORATION -->
+      <div class="ucapan-sparkles"></div>
+
+      <img src="./assets/images/kupu5.gif" alt="" class="ucapan-butterflies">
+
+      <!-- FRAME -->
+      <img src="./assets/images/frame-atas.png" alt="" class="ucapan-frame-atas">
+
+      <img src="./assets/images/frame-bawah.png" alt="" class="ucapan-frame-bawah">
+
+      <!-- CARD -->
+      <div class="ucapan-card">
+
+        <!-- HEADER -->
+        <div class="ucapan-header">
+
+          <h2>Ucapkan Sesuatu</h2>
+
+          <p>
+            Berikan Ucapan & Doa Restu
+          </p>
+
+          <div class="ucapan-divider">
+            <span></span>
+            <i class="fa-solid fa-star"></i>
+            <span></span>
+          </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- RANGKUMAN KEHADIRAN -->
+        <!-- ========================= -->
+
+        <div class="attendance-summary">
+
+          <div class="attendance-side hadir">
+
+            <div class="attendance-icon">
+              <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div class="attendance-info">
+              <span class="attendance-number" id="jumlahHadir">
+                0
+              </span>
+
+              <span class="attendance-label">
+                Akan Hadir
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="attendance-divider"></div>
+
+
+          <div class="attendance-side tidak-hadir">
+
+            <div class="attendance-icon">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="attendance-info">
+              <span class="attendance-number" id="jumlahTidakHadir">
+                0
+              </span>
+
+              <span class="attendance-label">
+                Tidak Hadir
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- FORM UCAPAN -->
+        <!-- ========================= -->
+
+        <div class="ucapan-form">
+
+          <input type="text" class="ucapan-input" id="ucapanNama" placeholder="Nama">
+
+          <textarea class="ucapan-textarea" id="ucapanPesan" placeholder="Berikan Ucapan & Do'a"></textarea>
+
+
+          <!-- KONFIRMASI -->
+
+          <div class="confirmation-title">
+            Konfirmasi Kehadiran
+          </div>
+
+          <div class="confirmation-options">
+
+            <button type="button" class="confirmation-btn active" data-status="hadir">
+              <i class="fa-solid fa-circle-check"></i>
+              Hadir
+            </button>
+
+            <button type="button" class="confirmation-btn" data-status="tidak-hadir">
+              <i class="fa-solid fa-circle-xmark"></i>
+              Tidak Hadir
+            </button>
+
+          </div>
+
+
+          <button type="button" class="btn-kirim-ucapan" id="btnKirimUcapan">
+            Kirim
+          </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- LIST UCAPAN -->
+        <!-- ========================= -->
+
+        <div class="ucapan-list">
+
+          <div class="list-title">
+            Ucapan & Doa
+          </div>
+          <div id="ucapanContainer"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+  <!-- MUSIK LATAR (taruh file lagunya di assets/audio/music.mp3) -->
+  <audio id="bgMusic" src="./assets/audio/music.mp3" preload="auto" loop></audio>
+
+  <!-- TOMBOL MELAYANG: muncul setelah undangan dibuka -->
+  <div class="float-controls" id="floatControls">
+    <button type="button" class="float-btn" id="btnAutoScroll" aria-pressed="true" aria-label="Auto scroll"
+      title="Auto scroll">
+      <i class="fa-solid fa-angles-down"></i>
+    </button>
+    <button type="button" class="float-btn" id="btnMusic" aria-pressed="true" aria-label="Musik" title="Musik">
+      <i class="fa-solid fa-compact-disc"></i>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/60f7877399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+    import {
+      getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCJ6G-NhclkEZXi-ccOFwtt6XreBoHxJhI",
+      authDomain: "sagu-40d45.firebaseapp.com",
+      projectId: "sagu-40d45",
+      storageBucket: "sagu-40d45.firebasestorage.app",
+      messagingSenderId: "674999341842",
+      appId: "1:674999341842:web:dba3acbaa48f903ea399cb",
+      measurementId: "G-HMTE0MGZMM"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // ---------- pilihan kehadiran ----------
+    let selectedAttendance = 'hadir';
+    const confirmationButtons = document.querySelectorAll('.confirmation-btn');
+
+    confirmationButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        confirmationButtons.forEach((b) => b.classList.remove('active'));
+        button.classList.add('active');
+        selectedAttendance = button.getAttribute('data-status');
+      });
+    });
+
+    // ---------- kirim ucapan ----------
+    // ---------- kirim ucapan ----------
+    const btnKirim = document.getElementById('btnKirimUcapan');
+    const inputNama = document.getElementById('ucapanNama');
+    const inputPesan = document.getElementById('ucapanPesan');
+
+    // Tema dasar semua popup, ubah warnanya sesuai tema undanganmu
+    const swalTheme = Swal.mixin({
+      confirmButtonColor: '#c9a27e',
+      background: '#fffaf5',
+      color: '#5a4636',
+      borderRadius: '20px',
+      customClass: { popup: 'swal-undangan' }
+    });
+
+    btnKirim.addEventListener('click', async () => {
+      const nama = inputNama.value.trim();
+      const pesan = inputPesan.value.trim();
+
+      if (!nama) {
+        return swalTheme.fire({
+          icon: 'warning',
+          title: 'Nama belum diisi',
+          text: 'Silakan isi nama terlebih dahulu.',
+          confirmButtonText: 'Oke'
+        });
+      }
+
+      if (!pesan) {
+        return swalTheme.fire({
+          icon: 'warning',
+          title: 'Ucapan belum diisi',
+          text: 'Silakan tulis ucapan & doa terlebih dahulu.',
+          confirmButtonText: 'Oke'
+        });
+      }
+
+      btnKirim.disabled = true;
+      btnKirim.textContent = 'Mengirim...';
+
+      try {
+        await addDoc(collection(db, 'ucapan'), {
+          nama,
+          ucapan: pesan,
+          kehadiran: selectedAttendance,
+          createdAt: serverTimestamp()
+        });
+
+        inputNama.value = '';
+        inputPesan.value = '';
+
+        swalTheme.fire({
+          icon: 'success',
+          title: 'Terima kasih ❤️',
+          text: 'Ucapan kamu berhasil dikirim.',
+          timer: 2500,
+          timerProgressBar: true,
+          showConfirmButton: false
+        });
+      } catch (error) {
+        console.error('Gagal menyimpan ucapan:', error);
+
+        swalTheme.fire({
+          icon: 'error',
+          title: 'Gagal mengirim',
+          text: 'Ucapan gagal dikirim. Silakan coba lagi.',
+          confirmButtonText: 'Coba lagi'
+        });
+      } finally {
+        btnKirim.disabled = false;
+        btnKirim.textContent = 'Kirim';
+      }
+    });
+
+    // ---------- tampilkan daftar + hitung ----------
+    const ucapanContainer = document.getElementById('ucapanContainer');
+    const jumlahHadir = document.getElementById('jumlahHadir');
+    const jumlahTidakHadir = document.getElementById('jumlahTidakHadir');
+
+    const ucapanQuery = query(collection(db, 'ucapan'), orderBy('createdAt', 'desc'));
+
+    onSnapshot(
+      ucapanQuery,
+      (snapshot) => {
+        ucapanContainer.innerHTML = '';
+        let hadir = 0, tidakHadir = 0;
+
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.kehadiran === 'hadir') hadir++;
+          if (data.kehadiran === 'tidak-hadir') tidakHadir++;
+          renderUcapan(data);
+        });
+
+        jumlahHadir.textContent = hadir;
+        jumlahTidakHadir.textContent = tidakHadir;
+      },
+      (error) => console.error('Gagal mengambil ucapan:', error)
+    );
+
+    function renderUcapan(data) {
+      const item = document.createElement('div');
+      item.className = 'ucapan-item';
+
+      const isHadir = data.kehadiran === 'hadir';
+      const dateText = data.createdAt ? formatDate(data.createdAt.toDate()) : '';
+
+      item.innerHTML = `
+      <div class="ucapan-avatar"><i class="fa-solid fa-user"></i></div>
+      <div class="ucapan-detail">
+        <div class="ucapan-name-row">
+          <span class="ucapan-name">${escapeHtml(data.nama)}</span>
+          <span class="status-badge ${isHadir ? 'hadir' : 'tidak-hadir'}">
+            <span></span>${isHadir ? 'Hadir' : 'Tidak Hadir'}
+          </span>
+        </div>
+        <div class="ucapan-date">${dateText}</div>
+        <p class="ucapan-message">${escapeHtml(data.ucapan)}</p>
+      </div>
+    `;
+      ucapanContainer.appendChild(item);
+    }
+
+    function formatDate(d) {
+      const p = (n) => String(n).padStart(2, '0');
+      return `${p(d.getDate())}-${p(d.getMonth() + 1)}-${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}`;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+  </script>
+</body>
+
+</html>
