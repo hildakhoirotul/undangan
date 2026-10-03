@@ -524,4 +524,41 @@ document.addEventListener('DOMContentLoaded', function () {
     // Catatan: tombol pilihan "Hadir / Tidak Hadir" sekarang
     // sepenuhnya di-handle script Firebase di index.html
     // (sebelumnya ada dua handler yang kerjanya dobel).
+
+    var copyAddressBtn = document.getElementById('copyAddressBtn');
+
+    copyAddressBtn.addEventListener('click', function () {
+        window.open(
+            'https://maps.app.goo.gl/ez6vx15i8bP1x3ct8',
+            '_blank'
+        );
+    });
+
+    var saveDateBtn = document.getElementById('saveDateBtn');
+
+    saveDateBtn.addEventListener('click', function () {
+
+        var title = 'The Wedding of Salsa & Agung';
+
+        var start = '20270103T010000Z';
+        var end = '20270103T070000Z';
+
+        var details =
+            'Akad Nikah Salsa & Agung\n' +
+            'Ahad, 03 Januari 2027\n' +
+            '08.00 WIB - Selesai\n\n' +
+            'Dsn Sumbertempur RT 02 RW 01 Ds Sumbergirang Kec Puri Kab Mojokerto';
+
+        var location =
+            'Dsn Sumbertempur RT 02 RW 01 Ds Sumbergirang Kec Puri Kab Mojokerto';
+
+        var calendarUrl =
+            'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+            '&text=' + encodeURIComponent(title) +
+            '&dates=' + start + '/' + end +
+            '&details=' + encodeURIComponent(details) +
+            '&location=' + encodeURIComponent(location);
+
+        window.open(calendarUrl, '_blank');
+    });
 });
