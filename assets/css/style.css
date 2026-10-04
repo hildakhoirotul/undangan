@@ -940,7 +940,7 @@ html.is-locked body {
 
     display: block;
 
-    padding: 7px 17px;
+    padding: 6px 15px;
 
     background: #25341c;
     border: 1px solid #25341c;
@@ -949,7 +949,7 @@ html.is-locked body {
     color: #fff;
 
     font-family: "Space Mono", monospace;
-    font-size: 1rem;
+    font-size: 0.75rem;
 
     opacity: 0;
 
@@ -1301,7 +1301,7 @@ html.is-locked body {
     right: 0;
 
     width: clamp(70px, 18vw, 130px);
-    height: 100dvh;
+    height: auto;
 
     overflow: hidden;
 
@@ -1344,36 +1344,28 @@ html.is-locked body {
     }
 }
 
-/* TULISAN */
-.section-bride .bride-content {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    margin-top: .5rem;
-}
 
 /* ========================= */
 /* BRIDE CONTENT */
 /* ========================= */
 
-.bride-content {
+.section-bride .bride-content {
     position: relative;
+
     z-index: 3;
 
     width: 100%;
     max-width: 600px;
 
     margin: 0 auto;
-    padding: 50px 25px 80px;
+
+    padding: clamp(40px, 8vh, 80px) clamp(20px, 6vw, 40px) clamp(80px, 10vh, 120px);
 
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -1790,7 +1782,7 @@ html.is-locked body {
     left: 0;
 
     width: clamp(70px, 18vw, 130px);
-    height: 100dvh;
+    height: auto;
 
     overflow: hidden;
 
@@ -1835,13 +1827,20 @@ html.is-locked body {
 
 /* TULISAN */
 .section-groom .groom-content {
-    position: absolute;
-    inset: 0;
+    position: relative;
+
     z-index: 3;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding:
+        clamp(50px, 10vh, 80px) clamp(20px, 6vw, 40px) clamp(80px, 10vh, 120px);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     text-align: center;
@@ -2083,7 +2082,7 @@ html.is-locked body {
     justify-content: center;
     align-items: center;
 
-    margin: 70px 0 10px;
+    margin: 60px 0 10px;
 
     opacity: 0;
 }
@@ -2343,20 +2342,22 @@ html.is-locked body {
 /* ========================= */
 
 .place-content {
-    position: absolute;
-    inset: 0;
-
+    position: relative;
     z-index: 4;
+
+    width: 90%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding:
+        clamp(35px, 6vh, 60px) clamp(30px, 7vw, 50px) clamp(120px, 18vh, 180px);
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     text-align: center;
-
-    padding: 8% 8% 5% 8%;
-
-    overflow: hidden;
 }
 
 
@@ -2365,12 +2366,16 @@ html.is-locked body {
 /* ========================= */
 
 .place-main-title {
-    margin: 25px 0 10px;
+    margin:
+        clamp(15px, 3vh, 25px) 0 clamp(5px, 1.5vh, 10px);
 
     font-family: "Satisfy", cursive;
-    font-size: clamp(2.5rem, 3vw, 1.2rem);
-    font-weight: 700;
 
+    font-size: clamp(2rem,
+            7vw,
+            2.8rem);
+
+    font-weight: 700;
     color: #25341c;
 }
 
@@ -2380,18 +2385,17 @@ html.is-locked body {
 /* ========================= */
 
 .place-panel {
-    position: absolute;
+    position: relative;
 
-    top: 18%;
-    left: 50%;
-
-    width: 80%;
+    width: 100%;
     max-width: 400px;
 
-    transform: translate(-50%, 15px);
+    margin: clamp(15px, 3vh, 30px) auto 0;
 
     opacity: 0;
     visibility: hidden;
+
+    transform: translateY(15px);
 
     transition:
         opacity .7s ease,
@@ -2399,11 +2403,17 @@ html.is-locked body {
         visibility .7s ease;
 }
 
+.place-panel:not(.active) {
+    display: none;
+}
+
 .place-panel.active {
+    display: block;
+
     opacity: 1;
     visibility: visible;
 
-    transform: translate(-50%, 0);
+    transform: translateY(0);
 }
 
 
@@ -2412,10 +2422,13 @@ html.is-locked body {
 /* ========================= */
 
 .place-panel h2 {
-    margin: 0 0 12px;
+    margin: 0 0 clamp(8px, 2vh, 12px);
 
     font-family: "Comforter", cursive;
-    font-size: clamp(2.5rem, 8vw, 4rem);
+
+    font-size: clamp(2.2rem,
+            8vw,
+            4rem);
 
     line-height: 1;
 
@@ -2428,10 +2441,13 @@ html.is-locked body {
 /* ========================= */
 
 .place-day {
-    margin: 0 0 7px;
+    margin: 0 0 clamp(5px, 1vh, 7px);
 
     font-family: "Space Mono", monospace;
-    font-size: clamp(.75rem, 2vw, .85rem);
+
+    font-size: clamp(.68rem,
+            2.2vw,
+            .85rem);
 
     color: #25341c;
 }
@@ -2442,10 +2458,13 @@ html.is-locked body {
 /* ========================= */
 
 .place-time {
-    margin: 0 0 18px;
+    margin: 0 0 clamp(12px, 2vh, 18px);
 
     font-family: "Space Mono", monospace;
-    font-size: clamp(.75rem, 2vw, .9rem);
+
+    font-size: clamp(.68rem,
+            2.2vw,
+            .9rem);
 
     color: #25341c;
 }
@@ -2459,26 +2478,32 @@ html.is-locked body {
     flex-direction: column;
     align-items: center;
 
-    margin: 0 auto 15px;
+    margin: 0 auto clamp(10px, 2vh, 15px);
 }
 
 .place-location i {
     margin-bottom: 6px;
 
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem,
+            4vw,
+            1.5rem);
 
     color: #25341c;
 }
 
 .place-address {
+    width: 100%;
     max-width: 330px;
 
     margin: 0 auto;
 
     font-family: "Space Mono", monospace;
-    font-size: clamp(.75rem, 1.7vw, .75rem);
 
-    line-height: 1.6;
+    font-size: clamp(.62rem,
+            1.9vw,
+            .75rem);
+
+    line-height: 1.5;
 
     color: #25341c;
 }
@@ -2491,11 +2516,9 @@ html.is-locked body {
     position: relative;
 
     width: 100%;
+    max-width: 330px;
 
-    margin: 0 auto 0;
-
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }
 
 
@@ -2506,7 +2529,7 @@ html.is-locked body {
 .map-canvas {
     display: block;
 
-    width: 330px;
+    width: 100%;
     height: auto;
 
     position: relative;
@@ -2524,8 +2547,8 @@ html.is-locked body {
 .google-map {
     position: absolute;
 
-    width: 225px;
-    height: 190px;
+    width: 68%;
+    aspect-ratio: 225 / 190;
 
     top: 50%;
     left: 50%;
@@ -2536,7 +2559,9 @@ html.is-locked body {
 
     overflow: hidden;
 
-    border-radius: 10px;
+    border-radius: clamp(6px,
+            2vw,
+            10px);
 }
 
 .google-map iframe {
@@ -2544,6 +2569,7 @@ html.is-locked body {
     height: 100%;
 
     border: 0;
+
     display: block;
 }
 
@@ -2557,12 +2583,16 @@ html.is-locked body {
     right: -15px;
     bottom: -20px;
 
-    width: clamp(100px, 65vw, 300px);
+    width: clamp(100px,
+            45vw,
+            250px);
+
     height: auto;
 
     z-index: 5;
 
     pointer-events: none;
+
     opacity: 0.75;
 }
 
@@ -2954,7 +2984,7 @@ html.is-locked body {
     top: 0;
     right: 0;
 
-    width: 43%;
+    width: 40%;
     height: 100%;
 
     overflow: hidden;
@@ -3966,7 +3996,7 @@ html.is-locked body {
 
     margin: 0 auto;
 
-    padding: 50px 25px 45px;
+    padding: 60px 25px 45px;
 
     box-sizing: border-box;
 
@@ -4667,11 +4697,12 @@ html.is-locked body {
 @media (min-width: 412px) {
     .btn-buka-undangan {
         left: 28%;
+        bottom: clamp(50px, 15vh, 90px);
     }
 
-    /* .wedding-title {
+    .wedding-title {
         top: 58%;
-    } */
+    }
 
     .section-opening .content .to {
         margin-top: 0;
@@ -4703,10 +4734,10 @@ html.is-locked body {
         bottom: -75px;
     } */
 
-    .section-bride .bride-content {
+    /* .section-bride .bride-content {
         position: relative;
         margin-top: 0;
-    }
+    } */
 
     /* .scroll-indicator {
         bottom: 10px;
@@ -4718,15 +4749,15 @@ html.is-locked body {
         height: 30px;
     }
 
-    .section-groom .groom-content {
+    /* .section-groom .groom-content {
         position: relative;
         padding-top: 65px;
-    }
+    } */
 
-    .section-groom .groom-batik-frame {
+    /* .section-groom .groom-batik-frame {
         height: auto;
         z-index: 3;
-    }
+    } */
 
     .countdown-divider {
         margin: 30px 0 10px;
@@ -4738,7 +4769,7 @@ html.is-locked body {
     }
 
     .place-main-title {
-        margin: 20px 0 0;
+        margin: 20px 0 15px;
         font-size: clamp(2rem, 3vw, 1.2rem);
     }
 
