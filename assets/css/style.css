@@ -391,7 +391,7 @@
    --------------------------------------------------------- */
 .wedding-title {
     position: absolute;
-    top: clamp(45%, 55%, 60%);
+    top: clamp(45%, 57%, 60%);
     left: 50%;
     width: max-content;
     transform: translate(-50%, -50%);
