@@ -391,7 +391,7 @@
    --------------------------------------------------------- */
 .wedding-title {
     position: absolute;
-    top: 55%;
+    top: clamp(45%, 55%, 60%);
     left: 50%;
     width: max-content;
     transform: translate(-50%, -50%);
@@ -447,7 +447,7 @@
 
 .btn-buka-undangan {
     position: absolute;
-    top: 75%;
+    bottom: clamp(50px, 15vh, 100px);
     left: 25%;
     transform: translateX(-50%);
 
@@ -888,9 +888,9 @@ html.is-locked body {
 }
 
 .section-opening .content .savedate {
-    padding-top: 1rem;
-    padding-left: 1.5rem;
-    margin-top: 1.5rem;
+    padding-top: clamp(0.25rem, 1vh, 1rem);
+    padding-left: clamp(0.75rem, 4vw, 1.5rem);
+    margin-top: clamp(0.25rem, 1vh, 1.5rem);
 }
 
 /* ========================= */
@@ -998,9 +998,8 @@ html.is-locked body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 78px;
-    /* di atas tombol melayang (auto scroll & musik) */
-    right: 25px;
+    bottom: clamp(20px, 3vh, 90px);
+    right: clamp(15px, 5vw, 25px);
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -1120,10 +1119,6 @@ html.is-locked body {
     overflow: hidden;
 }
 
-.section-doa .content {
-    position: relative;
-}
-
 .section-doa .frame-atas,
 .section-doa .frame-bawah {
     z-index: 3;
@@ -1135,9 +1130,22 @@ html.is-locked body {
     clip-path: inset(0% 100% 65% 0%);
 }
 
-.section-doa .frame-bawah {
+/* .section-doa .frame-bawah {
     bottom: -105px;
     left: 0;
+    clip-path: inset(100% 65% 0% 0%);
+} */
+
+.section-doa .frame-bawah {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 3;
+
     clip-path: inset(100% 65% 0% 0%);
 }
 
@@ -1152,12 +1160,25 @@ html.is-locked body {
 }
 
 .section-doa .doa-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: min(90%, 600px);
+
+    transform: translate(-50%, calc(-50% + 15px));
+
+    z-index: 4;
+    opacity: 0;
+}
+
+/* .section-doa .doa-text {
     padding-top: 70px;
     position: relative;
     z-index: 4;
     opacity: 0;
     transform: translateY(15px);
-}
+} */
 
 .section-doa.animate .doa-text {
     animation:
@@ -1167,12 +1188,12 @@ html.is-locked body {
 @keyframes fadeInDoa {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translate(-50%, calc(-50% + 15px));
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -4645,23 +4666,22 @@ html.is-locked body {
 
 @media (min-width: 412px) {
     .btn-buka-undangan {
-        top: 83%;
         left: 28%;
     }
 
-    .wedding-title {
+    /* .wedding-title {
         top: 58%;
-    }
+    } */
 
     .section-opening .content .to {
         margin-top: 0;
     }
 
-    .section-opening .content .savedate {
+    /* .section-opening .content .savedate {
         padding-top: 0;
         padding-left: 1.5rem;
         margin-top: 1.5rem;
-    }
+    } */
 
     .section-opening .content .title {
         font-size: clamp(1rem, 3vw, 1.5rem);
@@ -4675,23 +4695,23 @@ html.is-locked body {
         width: 65%;
     }
 
-    .section-doa .doa-text {
+    /* .section-doa .doa-text {
         padding-top: 45px;
-    }
+    } */
 
-    .section-doa .frame-bawah {
+    /* .section-doa .frame-bawah {
         bottom: -75px;
-    }
+    } */
 
     .section-bride .bride-content {
         position: relative;
         margin-top: 0;
     }
 
-    .scroll-indicator {
+    /* .scroll-indicator {
         bottom: 10px;
         right: 5px;
-    }
+    } */
 
     .mouse {
         width: 22px;
