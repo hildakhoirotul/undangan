@@ -1,0 +1,131 @@
+/* =========================================================
+   LOADING SCREEN (preloader)
+   ---------------------------------------------------------
+   Tampil paling depan saat halaman pertama dibuka, sambil
+   assets/js/preloader.js memuat aset cover & section pertama.
+   Selama masih loading (html.is-loading), animasi cover ditahan
+   supaya baru mulai begitu loading screen memudar.
+   ========================================================= */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 24px;
+    text-align: center;
+    color: #dab96b;
+
+    background:
+        radial-gradient(circle at 50% 40%, #24401a 0%, #14210f 70%),
+        #14210f;
+
+    transition:
+        opacity 0.9s ease,
+        visibility 0s linear 0.9s;
+}
+
+#preloader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-kicker {
+    margin: 0;
+    font-family: 'Satisfy', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.preloader-names {
+    margin: 0;
+    font-family: "Story Script", sans-serif;
+    font-size: clamp(2rem, 9vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.preloader-guest {
+    margin: 10px 0 0;
+    font-family: "Space Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    opacity: 0.85;
+    overflow-wrap: anywhere;
+}
+
+.preloader-guest:empty {
+    display: none;
+}
+
+/* ornamen kecil berdenyut */
+.preloader-ornament {
+    margin: 22px 0 18px;
+    font-size: 1rem;
+    animation: preloaderPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes preloaderPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+/* bar progress */
+.preloader-bar {
+    width: min(60vw, 240px);
+    height: 2px;
+    overflow: hidden;
+    background: rgba(218, 185, 107, 0.25);
+    border-radius: 2px;
+}
+
+.preloader-bar-fill {
+    width: 100%;
+    height: 100%;
+    background: #dab96b;
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+.preloader-text {
+    margin: 12px 0 0;
+    font-family: "Space Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------------------------------
+   Tahan semua animasi cover selama loading. Saat class
+   is-loading dicopot, animasi mulai dari awal (delay-nya
+   baru dihitung dari situ).
+   --------------------------------------------------------- */
+html.is-loading .cover,
+html.is-loading .cover * {
+    animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .preloader-ornament {
+        animation: none;
+    }
+
+    #preloader {
+        transition-duration: 0.01s;
+    }
+}

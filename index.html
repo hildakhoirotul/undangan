@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" class="is-locked">
+<html lang="id" class="is-locked is-loading">
 
 <head>
   <meta charset="utf-8">
@@ -29,9 +29,29 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/preloader.css">
+  <script>
+    // Jaga-jaga: kalau preloader.js gagal dimuat, loading screen tidak boleh
+    // menahan undangan selamanya.
+    setTimeout(function () {
+      document.documentElement.classList.remove('is-loading');
+      var l = document.getElementById('preloader');
+      if (l) l.classList.add('is-hidden');
+    }, 45000);
+  </script>
 </head>
 
 <body>
+  <!-- LOADING SCREEN -->
+  <div id="preloader" aria-live="polite">
+    <p class="preloader-kicker">The Wedding Of</p>
+    <p class="preloader-names">SALSA &amp; AGUNG</p>
+    <p class="preloader-guest" id="preloaderGuest"></p>
+    <div class="preloader-ornament" aria-hidden="true">&#10022;</div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preloaderBar"></div></div>
+    <p class="preloader-text">Memuat undangan... <span id="preloaderPercent">0%</span></p>
+  </div>
+
   <div class="cover">
 
     <div class="cover-bg">
@@ -124,12 +144,12 @@
         <div class="sparkles"></div>
 
         <!-- BUTTERFLIES -->
-        <img class="butterflies" src="./assets/images/kupu5.gif" alt="">
+        <img loading="lazy" decoding="async" class="butterflies" src="./assets/images/kupu5.gif" alt="">
 
         <!-- FRAME -->
-        <img class="frame-atas" src="./assets/images/frame-atas2.png" alt="">
+        <img loading="lazy" decoding="async" class="frame-atas" src="./assets/images/frame-atas2.png" alt="">
 
-        <img class="frame-bawah" src="./assets/images/frame-bawah2.png" alt="">
+        <img loading="lazy" decoding="async" class="frame-bawah" src="./assets/images/frame-bawah2.png" alt="">
 
         <div class="doa-text text-center px-3">
           <p class="doa-title">Allah Subhanahu Wa Ta'ala berfirman</p>
@@ -147,17 +167,17 @@
     <section class="invitation-section section-bride">
 
       <!-- Video background -->
-      <video class="bride-video" autoplay muted loop playsinline>
-        <source src="./assets/images/bg4.mp4" type="video/mp4">
+      <video class="bride-video" autoplay muted loop playsinline preload="none">
+        <source data-src="./assets/images/bg4.mp4" type="video/mp4">
       </video>
 
       <!-- Canvas PNG -->
-      <img src="./assets/images/canvas.png" alt="" class="bride-canvas">
+      <img loading="lazy" decoding="async" src="./assets/images/canvas.png" alt="" class="bride-canvas">
 
       <div class="bride-batik-frame">
         <div class="bride-batik-track">
-          <img src="./assets/images/batik1.png" alt="">
-          <img src="./assets/images/batik1.png" alt="">
+          <img loading="lazy" decoding="async" src="./assets/images/batik1.png" alt="">
+          <img loading="lazy" decoding="async" src="./assets/images/batik1.png" alt="">
         </div>
       </div>
 
@@ -172,7 +192,7 @@
         </p>
         <p class="bride-name">Salsa Oktavia Dwi Puspitasari</p>
 
-        <img src="./assets/images/bride.png" alt="Bride" class="bride-img">
+        <img loading="lazy" decoding="async" src="./assets/images/bride.png" alt="Bride" class="bride-img">
 
         <p>Putri Kedua</p>
         <p class="bride-parents">Bapak Alm H. Luky Mulyono </br>
@@ -184,29 +204,29 @@
           <i class="fa-brands fa-whatsapp"></i>
         </div>
 
-        <img src="./assets/images/wayang1.gif" alt="" class="wayang-decoration">
+        <img loading="lazy" decoding="async" src="./assets/images/wayang1.gif" alt="" class="wayang-decoration">
       </div>
 
     </section>
 
     <div class="section-divider-ring">
-      <img src="./assets/images/cincin.gif" alt="cincin">
+      <img loading="lazy" decoding="async" src="./assets/images/cincin.gif" alt="cincin">
     </div>
 
     <!-- SECTION 4 -->
     <section class="invitation-section section-groom">
       <!-- Video background -->
-      <video class="groom-video" autoplay muted loop playsinline>
-        <source src="./assets/images/bg5.mp4" type="video/mp4">
+      <video class="groom-video" autoplay muted loop playsinline preload="none">
+        <source data-src="./assets/images/bg5.mp4" type="video/mp4">
       </video>
 
       <!-- Canvas PNG -->
-      <img src="./assets/images/canvas.png" alt="" class="groom-canvas">
+      <img loading="lazy" decoding="async" src="./assets/images/canvas.png" alt="" class="groom-canvas">
 
       <div class="groom-batik-frame">
         <div class="groom-batik-track">
-          <img src="./assets/images/batik2.png" alt="">
-          <img src="./assets/images/batik2.png" alt="">
+          <img loading="lazy" decoding="async" src="./assets/images/batik2.png" alt="">
+          <img loading="lazy" decoding="async" src="./assets/images/batik2.png" alt="">
         </div>
       </div>
 
@@ -214,7 +234,7 @@
       <div class="groom-content">
         <p class="groom-name">Agung Wahyu Saputra</p>
 
-        <img src="./assets/images/groom.png" alt="Groom" class="groom-img">
+        <img loading="lazy" decoding="async" src="./assets/images/groom.png" alt="Groom" class="groom-img">
 
         <p>Putra Pertama</p>
         <p class="groom-parents">Bapak Ahmad Gupron </br>
@@ -227,7 +247,7 @@
         </div>
 
         <div class="countdown-divider">
-          <img src="./assets/images/ornamen2.png" alt="">
+          <img loading="lazy" decoding="async" src="./assets/images/ornamen2.png" alt="">
         </div>
 
         <div class="countdown">
@@ -262,8 +282,8 @@
           </div>
         </div>
 
-        <!-- <img src="./assets/images/cincin.png" alt="" class="cincin-img"> -->
-        <img src="./assets/images/wayang2.gif" alt="" class="wayang-decoration">
+        <!-- <img loading="lazy" decoding="async" src="./assets/images/cincin.png" alt="" class="cincin-img"> -->
+        <img loading="lazy" decoding="async" src="./assets/images/wayang2.gif" alt="" class="wayang-decoration">
       </div>
     </section>
 
@@ -272,15 +292,15 @@
     <section class="invitation-section section-place">
 
       <!-- Video background -->
-      <video class="place-video" autoplay muted loop playsinline>
-        <source src="./assets/images/bg6.mp4" type="video/mp4">
+      <video class="place-video" autoplay muted loop playsinline preload="none">
+        <source data-src="./assets/images/bg6.mp4" type="video/mp4">
       </video>
 
       <!-- Canvas -->
       <div class="place-canvas-wrapper">
 
-        <img src="./assets/images/canvas.png" alt="" class="place-canvas">
-        <img src="./assets/images/bunga.gif" alt="" class="place-flower-frame">
+        <img loading="lazy" decoding="async" src="./assets/images/canvas.png" alt="" class="place-canvas">
+        <img loading="lazy" decoding="async" src="./assets/images/bunga.gif" alt="" class="place-flower-frame">
 
 
         <!-- BOOKMARK -->
@@ -324,7 +344,7 @@
             </div>
 
             <div class="map-wrapper">
-              <img src="./assets/images/canvas2.png" alt="" class="map-canvas">
+              <img loading="lazy" decoding="async" src="./assets/images/canvas2.png" alt="" class="map-canvas">
 
               <div class="google-map">
                 <iframe
@@ -360,7 +380,7 @@
             </div>
 
             <div class="map-wrapper">
-              <img src="./assets/images/canvas2.png" alt="" class="map-canvas">
+              <img loading="lazy" decoding="async" src="./assets/images/canvas2.png" alt="" class="map-canvas">
 
               <div class="google-map">
                 <!-- Google Maps nanti di sini -->
@@ -374,7 +394,7 @@
       </div>
 
       <!-- JOGLO -->
-      <img src="./assets/images/joglo.png" alt="" class="place-joglo">
+      <img loading="lazy" decoding="async" src="./assets/images/joglo.png" alt="" class="place-joglo">
 
     </section>
 
@@ -385,7 +405,7 @@
       <div class="story-content">
 
         <!-- FOOTPRINT -->
-        <img src="./assets/images/footprint.gif" alt="" class="footprint-1">
+        <img loading="lazy" decoding="async" src="./assets/images/footprint.gif" alt="" class="footprint-1">
 
         <!-- JUDUL -->
         <p class="story-main-title">Our Story</p>
@@ -396,9 +416,9 @@
           <!-- FOTO + BUNGA -->
           <div class="story-photo-wrapper">
 
-            <img src="./assets/images/bunga1.png" alt="" class="story-bunga">
+            <img loading="lazy" decoding="async" src="./assets/images/bunga1.png" alt="" class="story-bunga">
 
-            <img src="./assets/images/foto1.png" alt="" class="story-photo">
+            <img loading="lazy" decoding="async" src="./assets/images/foto1.png" alt="" class="story-photo">
 
           </div>
 
@@ -427,16 +447,16 @@
         </div>
 
         <!-- FOOTPRINT -->
-        <img src="./assets/images/footprint.gif" alt="" class="footprint-2">
+        <img loading="lazy" decoding="async" src="./assets/images/footprint.gif" alt="" class="footprint-2">
 
         <!-- STORY 2 NANTI -->
         <div class="story-item story-dua reverse">
 
           <div class="story-photo-wrapper">
 
-            <img src="./assets/images/foto2.png" alt="" class="story-photo">
+            <img loading="lazy" decoding="async" src="./assets/images/foto2.png" alt="" class="story-photo">
 
-            <img src="./assets/images/bunga2.png" alt="" class="story-bunga">
+            <img loading="lazy" decoding="async" src="./assets/images/bunga2.png" alt="" class="story-bunga">
 
           </div>
 
@@ -464,9 +484,9 @@
           <!-- FOTO + BUNGA -->
           <div class="story-photo-wrapper">
 
-            <img src="./assets/images/bunga1.png" alt="" class="story-bunga">
+            <img loading="lazy" decoding="async" src="./assets/images/bunga1.png" alt="" class="story-bunga">
 
-            <img src="./assets/images/foto3.png" alt="" class="story-photo">
+            <img loading="lazy" decoding="async" src="./assets/images/foto3.png" alt="" class="story-photo">
 
           </div>
 
@@ -533,9 +553,9 @@
 
         <div class="gallery-track">
 
-          <img src="./assets/images/foto4.png" alt="gallery" class="gallery">
+          <img loading="lazy" decoding="async" src="./assets/images/foto4.png" alt="gallery" class="gallery">
 
-          <img src="./assets/images/foto4.png" alt="gallery" class="gallery">
+          <img loading="lazy" decoding="async" src="./assets/images/foto4.png" alt="gallery" class="gallery">
 
         </div>
 
@@ -547,25 +567,25 @@
     <section class="invitation-section section-gift">
 
       <!-- FRAME ATAS -->
-      <!-- <img src="./assets/images/frame-atas1.png" alt="" class="gift-frame gift-frame-top"> -->
-      <img src="./assets/images/bunga1.gif" alt="" class="gift-flower-frame">
+      <!-- <img loading="lazy" decoding="async" src="./assets/images/frame-atas1.png" alt="" class="gift-frame gift-frame-top"> -->
+      <img loading="lazy" decoding="async" src="./assets/images/bunga1.gif" alt="" class="gift-flower-frame">
 
       <!-- DEKORASI BUNGA -->
-      <img src="./assets/images/bunga3.png" alt="" class="gift-flower">
+      <img loading="lazy" decoding="async" src="./assets/images/bunga3.png" alt="" class="gift-flower">
 
 
       <!-- CONTENT -->
       <div class="gift-content">
 
         <!-- GUNUNGAN -->
-        <img src="./assets/images/gunungan1.png" alt="" class="gift-gunungan">
+        <img loading="lazy" decoding="async" src="./assets/images/gunungan1.png" alt="" class="gift-gunungan">
 
 
         <!-- JUDUL -->
         <div class="gift-heading">
 
           <div class="gift-line gift-line-left">
-            <img src="./assets/images/line.png" alt="">
+            <img loading="lazy" decoding="async" src="./assets/images/line.png" alt="">
           </div>
 
           <p class="gift-title">
@@ -573,7 +593,7 @@
           </p>
 
           <div class="gift-line gift-line-right">
-            <img src="./assets/images/line.png" alt="">
+            <img loading="lazy" decoding="async" src="./assets/images/line.png" alt="">
           </div>
 
         </div>
@@ -590,7 +610,7 @@
         <!-- CARD REKENING 1 -->
         <div class="gift-card gift-card-1">
 
-          <img src="./assets/images/card.png" alt="" class="gift-card-bg">
+          <img loading="lazy" decoding="async" src="./assets/images/card.png" alt="" class="gift-card-bg">
 
           <div class="gift-card-content">
             <p>Bank: BCA</p>
@@ -604,7 +624,7 @@
         <!-- CARD REKENING 2 -->
         <div class="gift-card gift-card-2">
 
-          <img src="./assets/images/card.png" alt="" class="gift-card-bg">
+          <img loading="lazy" decoding="async" src="./assets/images/card.png" alt="" class="gift-card-bg">
 
           <div class="gift-card-content">
             <p>Bank: BCA</p>
@@ -618,7 +638,7 @@
         <!-- CARD KIRIM HADIAH -->
         <div class="gift-card gift-card-3 gift-card-address">
 
-          <img src="./assets/images/card2.png" alt="" class="gift-card-bg2">
+          <img loading="lazy" decoding="async" src="./assets/images/card2.png" alt="" class="gift-card-bg2">
 
           <div class="gift-card-content">
 
@@ -647,7 +667,7 @@
 
 
         <!-- ORNAMEN BAWAH -->
-        <img src="./assets/images/ornamen3.png" alt="" class="gift-ornament">
+        <img loading="lazy" decoding="async" src="./assets/images/ornamen3.png" alt="" class="gift-ornament">
 
 
         <!-- PENUTUP -->
@@ -660,7 +680,7 @@
 
 
       <!-- FRAME BAWAH -->
-      <!-- <img src="./assets/images/frame-bawah1.png" alt="" class="gift-frame gift-frame-bottom"> -->
+      <!-- <img loading="lazy" decoding="async" src="./assets/images/frame-bawah1.png" alt="" class="gift-frame gift-frame-bottom"> -->
 
     </section>
 
@@ -671,12 +691,12 @@
       <!-- BACKGROUND DECORATION -->
       <div class="ucapan-sparkles"></div>
 
-      <img src="./assets/images/kupu5.gif" alt="" class="ucapan-butterflies">
+      <img loading="lazy" decoding="async" src="./assets/images/kupu5.gif" alt="" class="ucapan-butterflies">
 
       <!-- FRAME -->
-      <img src="./assets/images/frame-atas.png" alt="" class="ucapan-frame-atas">
+      <img loading="lazy" decoding="async" src="./assets/images/frame-atas.png" alt="" class="ucapan-frame-atas">
 
-      <img src="./assets/images/frame-bawah.png" alt="" class="ucapan-frame-bawah">
+      <img loading="lazy" decoding="async" src="./assets/images/frame-bawah.png" alt="" class="ucapan-frame-bawah">
 
       <!-- CARD -->
       <div class="ucapan-card">
@@ -806,7 +826,7 @@
 
   </div>
   <!-- MUSIK LATAR (taruh file lagunya di assets/audio/music.mp3) -->
-  <audio id="bgMusic" src="./assets/audio/music.mp3" preload="auto" loop></audio>
+  <audio id="bgMusic" src="./assets/audio/music.mp3" preload="none" loop></audio>
 
   <!-- TOMBOL MELAYANG: muncul setelah undangan dibuka -->
   <div class="float-controls" id="floatControls">
@@ -824,6 +844,7 @@
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/60f7877399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  <script src="./assets/js/preloader.js"></script>
   <script src="./assets/js/main.js"></script>
 
   <script type="module">

@@ -180,14 +180,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }, gifDuration);
         }
 
-        setTimeout(function () {
-            startButterfly();
+        // Hitungan startDelay baru dimulai setelah loading screen selesai
+        // (preloader.js). Tanpa preloader.js langsung jalan seperti biasa.
+        (window.whenInvitationLoaded || function (callback) { callback(); })(function () {
+            setTimeout(function () {
+                startButterfly();
 
-            // Sparkle mulai bersamaan dengan kupu-kupu
-            if (coverSparkles) {
-                coverSparkles.classList.add('show');
-            }
-        }, startDelay);
+                // Sparkle mulai bersamaan dengan kupu-kupu
+                if (coverSparkles) {
+                    coverSparkles.classList.add('show');
+                }
+            }, startDelay);
+        });
     }
 
 
