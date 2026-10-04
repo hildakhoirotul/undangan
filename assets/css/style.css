@@ -448,7 +448,7 @@
 .btn-buka-undangan {
     position: absolute;
     bottom: clamp(50px, 15vh, 100px);
-    left: 25%;
+    left: 26%;
     transform: translateX(-50%);
 
     padding: 10px 28px;
@@ -1786,7 +1786,7 @@ html.is-locked body {
 
     overflow: hidden;
 
-    z-index: 4;
+    z-index: 3;
     pointer-events: none;
 }
 
