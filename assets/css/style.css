@@ -4813,3 +4813,72 @@ html.is-locked body {
         padding: 70px 0 70px;
     }
 }
+
+/* ========================= */
+/* SECTION QUOTE */
+/* ========================= */
+
+.section-quote {
+    position: relative;
+
+    width: 100%;
+    min-height: clamp(220px, 50dvh, 320px);
+
+    display: flex;
+    align-items: center;
+
+    background-image: url('../images/bg8.gif');
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.quote-content {
+    width: 90%;
+    max-width: 500px;
+
+    padding:
+        clamp(25px, 5vh, 45px)
+        30px;
+}
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+.quote-text {
+    margin: 0;
+
+    font-family: "Satisfy", cursive;
+
+    font-size: clamp(
+        1.5rem,
+        5vw,
+        2.2rem
+    );
+
+    line-height: 1.5;
+
+    color: #25341c;
+}
+
+.quote-desc {
+    margin: 0;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: clamp(
+        .75rem,
+        3vw,
+        2.2rem
+    );
+
+    line-height: 1.5;
+
+    color: #25341c;
+}
